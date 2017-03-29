@@ -1,26 +1,101 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QYn-U0-nYt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--ArithmeticVC-->
+        <scene sceneID="v8W-Bv-GfP">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QYn-U0-nYt" customClass="ArithmeticVC" customModule="Arithmetic_table" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="VQo-h5-IJK"/>
+                        <viewControllerLayoutGuide type="bottom" id="MqT-J7-M4o"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="jHs-oD-MWS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WLr-ad-K7L">
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KESLEY RIBEIRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4dD-K2-kOt">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="1" green="0.1020656128" blue="0.03049241095" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="4sL-jp-HXN">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4sL-jp-HXN" id="7Th-Uf-Pog">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QYn-U0-nYt" id="ZfS-ca-bUZ"/>
+                                    <outlet property="delegate" destination="QYn-U0-nYt" id="k1E-FL-s2v"/>
+                                </connections>
+                            </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="c2C-eh-nvB">
+                                <rect key="frame" x="14" y="68" width="347" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AC9-LW-VBC"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.072361183420000003" green="0.66142528550000002" blue="0.55969035960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="1" green="0.96799199479999998" blue="0.1623792352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.60408528650000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="QYn-U0-nYt" eventType="touchUpInside" id="h2D-SH-xJZ"/>
+                                </connections>
+                            </slider>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjC-dg-3yb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="e9X-6j-cDo"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="ARITHMETHICS TABLE" id="JvK-2z-0tj"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XjC-dg-3yb" firstAttribute="top" secondItem="VQo-h5-IJK" secondAttribute="bottom" id="BLr-QY-2W9"/>
+                            <constraint firstItem="WLr-ad-K7L" firstAttribute="top" secondItem="c2C-eh-nvB" secondAttribute="bottom" constant="4" id="HnO-3g-R83"/>
+                            <constraint firstItem="WLr-ad-K7L" firstAttribute="leading" secondItem="jHs-oD-MWS" secondAttribute="leading" id="JnP-ln-nsi"/>
+                            <constraint firstItem="MqT-J7-M4o" firstAttribute="top" secondItem="WLr-ad-K7L" secondAttribute="bottom" id="WOP-ox-FDA"/>
+                            <constraint firstAttribute="trailing" secondItem="XjC-dg-3yb" secondAttribute="trailing" id="ale-XM-4Td"/>
+                            <constraint firstAttribute="trailing" secondItem="c2C-eh-nvB" secondAttribute="trailing" constant="16" id="eM7-EI-VxF"/>
+                            <constraint firstAttribute="trailing" secondItem="WLr-ad-K7L" secondAttribute="trailing" id="jUB-QQ-Bw8"/>
+                            <constraint firstItem="WLr-ad-K7L" firstAttribute="top" secondItem="c2C-eh-nvB" secondAttribute="bottom" constant="4" id="leD-Dr-88e"/>
+                            <constraint firstItem="c2C-eh-nvB" firstAttribute="leading" secondItem="jHs-oD-MWS" secondAttribute="leading" constant="16" id="o7X-n3-UVh"/>
+                            <constraint firstItem="XjC-dg-3yb" firstAttribute="leading" secondItem="jHs-oD-MWS" secondAttribute="leading" id="pCd-7K-uXL"/>
+                            <constraint firstItem="c2C-eh-nvB" firstAttribute="top" secondItem="VQo-h5-IJK" secondAttribute="bottom" constant="48" id="toL-uS-4i6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myTable" destination="WLr-ad-K7L" id="UsE-xy-D3Y"/>
+                        <outlet property="sliderValue" destination="c2C-eh-nvB" id="yJN-Mi-kYS"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQZ-Mm-uWt" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>
